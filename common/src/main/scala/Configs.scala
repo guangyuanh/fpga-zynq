@@ -63,6 +63,10 @@ class ZC706MIGConfig extends Config(new WithExtMemSize(0x40000000L) ++ new ZynqC
 class BOOMZynqConfig extends Config(new WithExtMemSize(0x40000000L) ++ new WithZynqAdapter ++ new boom.MediumBoomConfig)
 class SmallBOOMZynqConfig extends Config(new WithZynqAdapter ++ new boom.SmallBoomConfig)
 
+class ZedBoardConfig extends Config(new Config((site, here, up) => {
+  case RocketTilesKey => up(RocketTilesKey) map (tile => tile.copy(core = RocketCoreParams(fpu = None)))
+}) ++ new WithZynqAdapter ++ new DefaultFPGASmallConfig)
+
 /*
 class WithIntegrationTest extends Config((here, site, up) => {
     case BuildSerialDriver =>
