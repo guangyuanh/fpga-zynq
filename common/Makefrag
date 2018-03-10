@@ -6,8 +6,10 @@ TOP_MODULE_PROJECT ?= zynq
 TOP_MODULE ?= Top
 CFG_PROJECT ?= $(TOP_MODULE_PROJECT)
 #CONFIG ?= BOOMZynqConfig
-CONFIG ?= RoccZynqConfig
+#CONFIG ?= RoccZynqConfig
 #CONFIG ?= SimpleRoccZynqConfig
+#CONFIG ?= ZynqConfig
+CONFIG ?= OnlyRoccZynqConfig
 EXTRA_PACKAGES=testchipip
 
 export ROCKETCHIP_ADDONS = boom

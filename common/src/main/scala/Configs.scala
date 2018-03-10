@@ -59,6 +59,7 @@ class NoBrPred extends Config((here, site, up) => {
   })
 
 class ZynqConfig extends Config(new WithZynqAdapter ++ new WithNBigCores(1) ++ new DefaultFPGAConfig)
+class OnlyRoccZynqConfig extends Config(new WithZynqAdapter ++ new RoccExampleConfig ++ new DefaultFPGAConfig)
 class RoccZynqConfig extends Config(new WithZynqAdapter ++ new WithNBigCores(1) ++ new RoccExampleConfig ++ new DefaultFPGAConfig)
 class SimpleRoccZynqConfig extends Config(new WithZynqAdapter ++ new WithNBigCores(1) ++ new WithRoccExample ++ new DefaultFPGAConfig)
 class ZC706MIGConfig extends Config(new WithExtMemSize(0x40000000L) ++ new ZynqConfig)
